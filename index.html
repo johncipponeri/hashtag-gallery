@@ -1,0 +1,56 @@
+<head>
+  <title>Hashtag Gallery</title>
+</head>
+
+<body>
+  <div class="container">
+    {{> topbar}}
+    {{> imageGrid}}
+  </div>
+</body>
+
+<template name="topbar">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href='#'>#Hashtag Gallery</a>
+      </div>
+
+      {{#if currentUser}}
+        {{> topbarSearch}}
+      {{else}}
+        {{> topbarLogin}}
+      {{/if}}
+    </div>
+  </nav>
+</template>
+
+<template name="topbarSearch">
+  <form class="navbar-form navbar-right" role="search">
+    <div class="form-group">
+      <input type="text" id="hashtagSearchText" class="form-control" placeholder="Enter #hashtag here">
+    </div>
+    <button type="submit" id="hashtagSearch" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+  </form>
+</template>
+
+<template name="topbarLogin">
+  <form class="navbar-form navbar-right" role="search">
+    <div class="form-group">
+      {{> loginButtons}}
+    </div>
+  </form>
+</template>
+
+<template name="imageGrid">
+  <div class="row">
+    {{#each links}}
+    <div class="col-lg-4 col-sm-6 col-xs-12">
+      <a href='{{.}}'>
+        <img src='{{.}}' class="thumbnail img-responsive" style="width: 400px; height:400px;">
+      </a>
+    </div>
+    {{/each}}
+    <!-- End of grid below -->
+  </div>
+</template>
