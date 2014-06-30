@@ -8,7 +8,6 @@ Meteor.methods({
       result_type : 'popular',
       count       : '50',
     });
-    //twitter.search(hashtag + " result_type:popular filter:images");
 
     var data = [];
 
