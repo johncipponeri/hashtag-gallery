@@ -1,6 +1,7 @@
 {
   "packages": {
     "twitter-api": {},
-    "bootstrap-3": {}
+    "bootstrap-3": {},
+    "persistent-session": {}
   }
 }
