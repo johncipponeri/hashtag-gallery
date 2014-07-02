@@ -1,4 +1,16 @@
 Template.topbarSearch.events({
+  "click button#logout": function (e) {
+    e.preventDefault();
+
+    Session.set("links", null);
+    Meteor.logout();
+  },
+
+  "keydown button#logout": function (e) {
+    if (e.which == "13")
+      return;
+  }
+
   "click button#hashtagSearch": function (e) {
     e.preventDefault();
 
@@ -12,7 +24,8 @@ Template.topbarSearch.events({
       if (err)
         console.log(err);
 
-      Session.set("links", data);
+      if (data.length > 0)
+        Session.set("links", data);
     });
   },
 });
