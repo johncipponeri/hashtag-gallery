@@ -9,7 +9,7 @@ Template.topbarSearch.events({
   "keydown button#logout": function (e) {
     if (e.which == "13")
       return;
-  }
+  },
 
   "click button#hashtagSearch": function (e) {
     e.preventDefault();
